@@ -17,7 +17,7 @@ def newton_binomial_iter(n, k):
         return result
 
 
-
+# Asssert that both methods return the same result
 assert newton_binomial_recursive(5, 2) == newton_binomial_iter(5, 2)
 print(newton_binomial_recursive(5, 2))
 print(newton_binomial_iter(5, 2))
