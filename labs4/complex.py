@@ -98,8 +98,8 @@ class Complex():
 
     def __mul__(self, other):
         if type(other) == Complex:
-            x = other.get_real() * self.__real - other.get_imaginary() * self.__imaginary
-            y = other.get_real() * self.__imaginary + other.get_imaginary() * self.__real
+            x = (other.get_real() * self.__real) - (other.get_imaginary() * self.__imaginary)
+            y = (other.get_real() * self.__imaginary) + (other.get_imaginary() * self.__real)
             return Complex(x, y)
         else:
             raise NotImplementedError
@@ -119,8 +119,8 @@ class Complex():
 
     def __truediv__(self, other):
         if type(other) == Complex:
-            x = (other.get_real() * self.__real - other.get_imaginary() * self.__imaginary) / (other.module() ** 2)
-            y = (other.get_real() * self.__imaginary + other.get_imaginary() * self.__real) / (other.module() ** 2)
+            x = (other.__real * self.__real + other.__imaginary * self.__imaginary) / (other.__real ** 2 + other.__imaginary ** 2)
+            y = (other.__real * self.__imaginary - other.__imaginary * self.__real) / (other.__real ** 2 + other.__imaginary ** 2)
             return Complex(x, y)
         else:
             raise NotImplementedError
